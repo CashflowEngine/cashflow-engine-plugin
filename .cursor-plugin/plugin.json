@@ -6,7 +6,7 @@
   "homepage": "https://cashflowengine.io",
   "repository": "https://github.com/CashflowEngine/cashflow-engine-plugin",
   "license": "MIT",
-  "logo": "assets/logo.svg",
+  "logo": "assets/logo.png",
   "keywords": ["options", "backtest", "portfolio", "analytics", "monte-carlo"],
   "mcpServers": "mcp.json",
   "skills": "skills"
