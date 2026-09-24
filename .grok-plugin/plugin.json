@@ -1,0 +1,13 @@
+{
+  "name": "cashflow-engine",
+  "description": "Query the CashFlow Engine backtested options-strategy library, measure portfolios, and run the Hunter from your own account. Analysis only: it cannot trade.",
+  "version": "0.1.0",
+  "author": { "name": "AI Momentum LLC" },
+  "homepage": "https://cashflowengine.io",
+  "repository": "https://github.com/CashflowEngine/cashflow-engine-plugin",
+  "license": "MIT",
+  "logo": "assets/logo.svg",
+  "keywords": ["options", "backtest", "portfolio", "analytics", "monte-carlo"],
+  "mcpServers": "mcp.json",
+  "skills": "skills"
+}

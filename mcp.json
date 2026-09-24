@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "cashflow-engine": {
+      "type": "http",
+      "url": "https://cashflow-mcp-production.up.railway.app/mcp",
+      "auth": {
+        "CLIENT_ID": "4fa6e0fc-6c9c-4f53-b956-a0ecd7784c9e",
+        "scopes": ["ce:mcp"]
+      }
+    }
+  }
+}
