@@ -33,6 +33,17 @@ claude plugin install cashflow-engine@cashflow-engine
 claude mcp login cashflow-engine
 ```
 
+**Codex**
+
+```
+codex plugin marketplace add CashflowEngine/cashflow-engine-plugin
+codex plugin add cashflow-engine@cashflow-engine
+codex mcp login cashflow-engine
+```
+
+Needs a Codex from September 2026 or later. Older builds cannot pin the sign-in
+port from a plugin, so the login fails at the last step.
+
 **Gemini CLI**
 
 ```
@@ -76,10 +87,16 @@ the redirect URI it must match.
 |---|---|
 | `mcp.json` + `.cursor-plugin/plugin.json` | Cursor and Grok Bot |
 | `.grok-plugin/plugin.json` | Grok Build |
+| `.codex-plugin/plugin.json` | Codex |
 | `.claude-plugin/` + `claude-code-mcp.json` | Claude Code |
 | `gemini-extension.json` | Gemini CLI |
 | `skills/cashflow-engine/SKILL.md` | the skill, read by Cursor, Grok Bot and Claude Code |
 | `GEMINI.md` | the same guidance in the form Gemini CLI loads |
+
+Codex reads `.codex-plugin/plugin.json` **before** the Claude and Cursor manifests,
+which is what keeps it on its own client rather than another vendor's. Do not add a
+`plugin.json` at the repository root: Codex would treat it as an Agent Plugin and
+resolve its MCP config to `mcp.json`, which belongs to Cursor and Grok Bot.
 
 Each manifest carries its own vendor's OAuth client ID. They are public by design
 (PKCE, no secret), but they are **not interchangeable**: a client ID only works with

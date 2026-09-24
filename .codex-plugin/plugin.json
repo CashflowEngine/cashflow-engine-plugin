@@ -1,0 +1,17 @@
+{
+  "name": "cashflow-engine",
+  "version": "0.1.0",
+  "description": "Search a backtested options-strategy library, measure portfolios, run Monte Carlo and the Hunter from Codex. Analysis only: it cannot trade.",
+  "skills": "./skills/",
+  "mcpServers": {
+    "cashflow-engine": {
+      "type": "http",
+      "url": "https://cashflow-mcp-production.up.railway.app/mcp",
+      "auth": "oauth",
+      "oauth": {
+        "clientId": "4250edea-6ecb-43b5-8942-f9d81f8ed3e7",
+        "callbackPort": 5555
+      }
+    }
+  }
+}
