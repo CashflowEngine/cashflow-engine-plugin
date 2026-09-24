@@ -1,0 +1,15 @@
+{
+  "name": "cashflow-engine",
+  "owner": { "name": "AI Momentum LLC", "url": "https://cashflowengine.io" },
+  "description": "The CashFlow Engine connector for Claude Code.",
+  "plugins": [
+    {
+      "name": "cashflow-engine",
+      "source": "./",
+      "displayName": "CashFlow Engine",
+      "description": "Search a backtested options-strategy library, measure portfolios, run Monte Carlo and the Hunter. Analysis only: it cannot trade.",
+      "license": "MIT",
+      "keywords": ["options", "backtest", "portfolio", "analytics"]
+    }
+  ]
+}

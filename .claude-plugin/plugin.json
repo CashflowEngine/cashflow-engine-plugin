@@ -1,0 +1,12 @@
+{
+  "name": "cashflow-engine",
+  "description": "Search a backtested options-strategy library, measure portfolios, run Monte Carlo and the Hunter from Claude Code. Analysis only: it cannot trade.",
+  "version": "0.1.0",
+  "author": { "name": "AI Momentum LLC" },
+  "homepage": "https://cashflowengine.io",
+  "repository": "https://github.com/CashflowEngine/cashflow-engine-plugin",
+  "license": "MIT",
+  "keywords": ["options", "backtest", "portfolio", "analytics", "monte-carlo"],
+  "mcpServers": "./claude-code-mcp.json",
+  "skills": "./skills"
+}

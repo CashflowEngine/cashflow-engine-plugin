@@ -23,11 +23,29 @@ perform yourself.
 
 ## Install
 
-**Cursor / Grok Bot** — install "CashFlow Engine" from the marketplace, then complete
-the browser sign-in when prompted.
+**Grok Bot** — in a chat, say: `Install the plugin from https://github.com/CashflowEngine/cashflow-engine-plugin`
 
-**Any MCP client, manually** — point it at `https://cashflow-mcp-production.up.railway.app/mcp`.
-Setup guides for Claude, Claude Code, Codex, Cursor and Gemini CLI are in the app under
+**Claude Code**
+
+```
+claude plugin marketplace add CashflowEngine/cashflow-engine-plugin
+claude plugin install cashflow-engine@cashflow-engine
+claude mcp login cashflow-engine
+```
+
+**Gemini CLI**
+
+```
+gemini extensions install https://github.com/CashflowEngine/cashflow-engine-plugin
+```
+
+Then start Gemini CLI and run `/mcp auth cashflow-engine` yourself. Installing does
+not sign you in.
+
+**Cursor** — install "CashFlow Engine" from the marketplace once it is listed.
+
+**Any other MCP client** — point it at `https://cashflow-mcp-production.up.railway.app/mcp`.
+Setup guides for Claude, Cowork, Codex and the rest are in the app under
 **Connect your AI**.
 
 You sign in with your normal CashFlow Engine login. Enter your credentials only on the
@@ -50,11 +68,26 @@ and subject to its data policy.
 
 ## Contents
 
-| Path | What it is |
+One repository, four vendors. Each reads a different manifest at its root, so they
+cannot collide, and keeping them together is what stops a client ID drifting from
+the redirect URI it must match.
+
+| Path | Vendor |
 |---|---|
-| `mcp.json` | The hosted MCP server plus its public OAuth client ID (PKCE, no secret) |
-| `skills/cashflow-engine/SKILL.md` | How the agent should use the connector |
-| `.cursor-plugin/plugin.json` | Cursor marketplace manifest |
-| `.grok-plugin/plugin.json` | Grok Build marketplace manifest |
+| `mcp.json` + `.cursor-plugin/plugin.json` | Cursor and Grok Bot |
+| `.grok-plugin/plugin.json` | Grok Build |
+| `.claude-plugin/` + `claude-code-mcp.json` | Claude Code |
+| `gemini-extension.json` | Gemini CLI |
+| `skills/cashflow-engine/SKILL.md` | the skill, read by Cursor, Grok Bot and Claude Code |
+| `GEMINI.md` | the same guidance in the form Gemini CLI loads |
+
+Each manifest carries its own vendor's OAuth client ID. They are public by design
+(PKCE, no secret), but they are **not interchangeable**: a client ID only works with
+the redirect URI registered for it.
+
+The server key is `cashflow-engine` everywhere except the Cursor and Grok Bot
+manifest, which uses `CashFlow Engine`. That is deliberate. Those two label the
+connector with the key, while the CLIs take it as an argument to a command such as
+`claude mcp login` or `/mcp auth`, where a space would break it.
 
 MIT licensed. Operated by AI Momentum LLC.

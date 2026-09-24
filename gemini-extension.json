@@ -1,0 +1,20 @@
+{
+  "name": "cashflow-engine",
+  "version": "0.1.0",
+  "description": "Search a backtested options-strategy library, measure portfolios, run Monte Carlo and the Hunter. Analysis only: it cannot trade.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "cashflow-engine": {
+      "url": "https://cashflow-mcp-production.up.railway.app/mcp",
+      "type": "http",
+      "oauth": {
+        "enabled": true,
+        "clientId": "4ae6770e-e016-43dc-be23-cdcecfa70fe4",
+        "authorizationUrl": "https://api.cashflowengine.io/mcp/oauth/authorize",
+        "tokenUrl": "https://api.cashflowengine.io/mcp/oauth/token",
+        "scopes": ["ce:mcp"],
+        "redirectUri": "http://localhost:7777/oauth/callback"
+      }
+    }
+  }
+}
