@@ -30,7 +30,7 @@ perform yourself.
 ```
 claude plugin marketplace add CashflowEngine/cashflow-engine-plugin
 claude plugin install cashflow-engine@cashflow-engine
-claude mcp login cashflow-engine
+claude mcp login plugin:cashflow-engine:cashflow-engine
 ```
 
 **Codex**
@@ -38,11 +38,15 @@ claude mcp login cashflow-engine
 ```
 codex plugin marketplace add CashflowEngine/cashflow-engine-plugin
 codex plugin add cashflow-engine@cashflow-engine
-codex mcp login cashflow-engine
+codex -c mcp_oauth_callback_port=5555 mcp login cashflow-engine
 ```
 
-Needs a Codex from September 2026 or later. Older builds cannot pin the sign-in
-port from a plugin, so the login fails at the last step.
+The `-c` flag pins the sign-in port to the one registered for Codex. The plugin
+also declares it, but Codex 0.146.0 ignored that and picked a random port, which
+the sign-in server rejects. The flag only affects that one command.
+
+Claude Code registers the plugin's server under a namespaced name, which is why its
+login command is `plugin:cashflow-engine:cashflow-engine` rather than `cashflow-engine`.
 
 **Gemini CLI**
 
