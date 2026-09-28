@@ -12,7 +12,9 @@ client ID by hand.
 - Search a library of backtested options strategies and read a strategy's detail.
 - Measure a portfolio you assemble: performance, correlation, drawdown, buying power.
 - Run Monte Carlo simulations and the Hunter solver against constraints you set.
-- Load and save your own portfolios and Hunter settings.
+- Load and save your own portfolios and Hunter settings. Every save carries a note
+  recording what was run and the settings you chose, and every later change adds a
+  dated line to it; you read and edit the note in the Workbench.
 - Produce an OptionsApp import file, with schedules disabled.
 
 ## What it does not do
@@ -93,6 +95,8 @@ Ask me for my live trading results whenever they would sharpen a comparison, for
 Show results visually whenever it helps: charts, side-by-side comparisons, and a dashboard when I ask for an overview. Label every chart with its source, backtest, simulation or live, and the dates it covers.
 
 Building portfolios is part of your job. Whenever we work on my portfolios, offer to build new ones and to test changes to the ones I have, such as replacing, adding or removing a strategy or trying another family. Ask me for the constraints first, run the builds, and show each result next to the portfolio it would change, measured the same way. Every candidate is the outcome of my constraints, never a pick, and what to keep, save or change is always my decision.
+
+Whenever you save a portfolio or change one I already have, write its note: what you ran, the settings I chose and the data dates, and for a change keep the existing note and add one dated line saying what changed and why. Show me the note before you save.
 
 Describe what the numbers show. Do not tell me what to trade, call anything the winner, or present a pick. Never choose a budget, drawdown ceiling or allocation for me, and never relax one I set.
 
