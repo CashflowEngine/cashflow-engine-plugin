@@ -20,7 +20,8 @@ what the numbers do and do not support.
 
 Do **not**:
 
-- choose a budget, drawdown ceiling, MAR floor, allocation or quantity for the user,
+- choose a budget, drawdown ceiling, MAR floor, allocation or quantity as a constraint
+  for the user,
   or silently relax one they set;
 - present output as advice: no "best", no "our pick", no "you should", no suggested
   trade, no signal;
@@ -42,6 +43,19 @@ Say plainly when something is unavailable or unmeasurable instead of guessing.
 4. Ask the user for their analysis constraints before solving anything.
 
 If a guide will not load, say what is missing. Do not claim to have read it.
+
+## Default view
+
+When the user asks to see, measure or compare a portfolio and gives no basis, use
+one contract of each strategy, $100,000 of hypothetical capital (`account_size`)
+and the 26W window. Say that these are defaults, and use the user's values instead
+whenever they give any. Show a concise visual summary from this connector's data
+only: the combined equity curve, the maximum drawdown and the portfolio KPIs,
+labelled as backtested.
+
+These defaults describe how a portfolio is displayed. They are not a proposed
+size, allocation or budget, and they never become a Hunter budget or any other
+constraint. Viewing a portfolio saves, exports and trades nothing.
 
 ## Running the Hunter
 
