@@ -1,6 +1,6 @@
 {
   "name": "cashflow-engine",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Search a backtested options-strategy library, measure portfolios, run Monte Carlo and the Hunter from Codex. Analysis only: it cannot trade.",
   "skills": "./skills/",
   "mcpServers": {
