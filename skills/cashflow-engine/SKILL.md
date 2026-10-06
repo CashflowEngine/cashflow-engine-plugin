@@ -102,11 +102,11 @@ optional, separate "recent performance" window: set it to require a strategy's
 sizing. `base_period` is never the ranking window, and leaving it unset skips the
 recent-performance check entirely.
 
-For a run against today, either field accepts any of the solver's supported periods
-(`base_period` must differ from `reference_period`). For a run "as of" a past date, the
-server currently only has stored data for `reference_period` `26W` or `Total` (`52W`
-will join once the server's past-date data covers it) and `base_period` `8W` or unset —
-any other combination is refused, never silently substituted.
+For a run against today, either field accepts any of: `1W`, `2W`, `4W`, `8W`, `12W`,
+`24W`, `26W`, `52W`, `1M`, `3M`, `6M`, `12M`, `24M`, `Total` (`base_period` must differ
+from `reference_period`). For a run "as of" a past date, the server only has stored data
+for `reference_period` `26W`, `52W` or `Total` and `base_period` `8W` or unset — any
+other combination is refused, never silently substituted.
 
 Read `period_audit` in the result. Do not call a recent-performance validation.
 
