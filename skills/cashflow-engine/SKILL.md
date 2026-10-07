@@ -92,6 +92,25 @@ Before solving, show the effective settings and mark which came from the user an
 are software defaults, so they can accept or change them. Long solves run through
 `start_hunter_v3_job` / `get_hunter_v3_job`.
 
+**`reference_period` vs `base_period`:** `reference_period` is the selection objective
+and ranking window — Hunter maximizes contract-weighted P/L over it, and every reported
+P/L and MAR figure uses it unless marked otherwise (for example `after_as_of`). The
+reference-period MAR floors (`credit_reference_mar_floor`, `min_reference_mar_per_strategy`)
+and `require_base_mar_above_reference` all compare against it too. `base_period` is an
+optional, separate "recent performance" window: set it to require a strategy's
+`base_period` MAR to beat its `reference_period` MAR, and/or to feed MAR-weighted contract
+sizing. `base_period` is never the ranking window, and leaving it unset skips the
+recent-performance check entirely.
+
+For a run against today, either field accepts any of: `1W`, `2W`, `4W`, `8W`, `12W`,
+`24W`, `26W`, `52W`, `1M`, `3M`, `6M`, `12M`, `24M`, `Total` (`base_period` must differ
+from `reference_period`). For a run "as of" a past date, the server only has stored data
+for `reference_period` `26W`, `52W` or `Total` and `base_period` `8W` or unset — any
+other combination is refused, never silently substituted. `52W` past dates become
+available gradually as that window's history is loaded; a specific `as_of` date not
+yet covered for the chosen `reference_period` is refused with a message naming the
+covered range, never silently served from a different window.
+
 Read `period_audit` in the result. Do not call a recent-performance validation.
 
 ## After a portfolio is assembled
