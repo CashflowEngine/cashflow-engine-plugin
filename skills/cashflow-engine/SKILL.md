@@ -106,7 +106,10 @@ For a run against today, either field accepts any of: `1W`, `2W`, `4W`, `8W`, `1
 `24W`, `26W`, `52W`, `1M`, `3M`, `6M`, `12M`, `24M`, `Total` (`base_period` must differ
 from `reference_period`). For a run "as of" a past date, the server only has stored data
 for `reference_period` `26W`, `52W` or `Total` and `base_period` `8W` or unset — any
-other combination is refused, never silently substituted.
+other combination is refused, never silently substituted. `52W` past dates become
+available gradually as that window's history is loaded; a specific `as_of` date not
+yet covered for the chosen `reference_period` is refused with a message naming the
+covered range, never silently served from a different window.
 
 Read `period_audit` in the result. Do not call a recent-performance validation.
 
