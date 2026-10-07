@@ -113,6 +113,16 @@ covered range, never silently served from a different window.
 
 Read `period_audit` in the result. Do not call a recent-performance validation.
 
+**The Hunter picks a portfolio once, it does not keep re-picking.** `reference_period`
+is the look-back window used once to rank and select a portfolio — not a recurring
+re-selection schedule. On a normal run, the window ends today and the pick is made from
+the most recent data; running the Hunter again later re-ranks from scratch and can
+return a different portfolio, since nothing is tracked or updated automatically between
+runs. On a run "as of" a past date, one portfolio is picked from data up to that date,
+and the `after_as_of` P/L then follows exactly that same portfolio — same strategies,
+same contracts — forward from the next trading day to the newest data, with no
+re-picking or rebalancing at any point in between.
+
 ## After a portfolio is assembled
 
 Offer a research review before treating it as finished. Keep the baseline and propose
