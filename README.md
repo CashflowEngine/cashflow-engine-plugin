@@ -40,12 +40,8 @@ claude mcp login plugin:cashflow-engine:cashflow-engine
 ```
 codex plugin marketplace add CashflowEngine/cashflow-engine-plugin
 codex plugin add cashflow-engine@cashflow-engine
-codex -c mcp_oauth_callback_port=5555 mcp login cashflow-engine
+codex mcp login cashflow-engine
 ```
-
-The `-c` flag pins the sign-in port to the one registered for Codex. The plugin
-also declares it, but Codex 0.146.0 ignored that and picked a random port, which
-the sign-in server rejects. The flag only affects that one command.
 
 Claude Code registers the plugin's server under a namespaced name, which is why its
 login command is `plugin:cashflow-engine:cashflow-engine` rather than `cashflow-engine`.
@@ -61,7 +57,7 @@ not sign you in.
 
 **Cursor** — install "CashFlow Engine" from the marketplace once it is listed.
 
-**Any other MCP client** — point it at `https://cashflow-mcp-production.up.railway.app/mcp`.
+**Any other MCP client** — point it at `https://mcp.cashflowengine.io/mcp`.
 Setup guides for Claude, Cowork, Codex and the rest are in the app under
 **Connect your AI**.
 
