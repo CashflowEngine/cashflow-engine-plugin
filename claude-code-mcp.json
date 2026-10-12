@@ -2,10 +2,8 @@
   "mcpServers": {
     "cashflow-engine": {
       "type": "http",
-      "url": "https://cashflow-mcp-production.up.railway.app/mcp",
+      "url": "https://mcp.cashflowengine.io/mcp",
       "oauth": {
-        "clientId": "da7c9da2-b0da-44e9-99df-56adf77d8e54",
-        "callbackPort": 8080,
         "scopes": "ce:mcp"
       }
     }
