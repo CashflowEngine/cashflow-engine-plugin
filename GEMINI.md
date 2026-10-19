@@ -79,6 +79,15 @@ no-stop, RIC and LSTG. `run_hunter` is the legacy stopped-credit engine, for an
 explicit legacy request only. Long solves go through `start_hunter_v3_job` and
 `get_hunter_v3_job`.
 
+**Talking to the customer about Hunter settings.** Translate every setting into plain
+trading language ("only strategies that open between 10:00 and 13:30 ET", "at most one
+strategy per entry time"). Never hand the customer raw field names, internal engine
+names, or a menu of workarounds to choose from. The entry-time window is a real
+setting (`entry_time_earliest` / `entry_time_latest`, US Eastern, inclusive). If a wish
+truly cannot be expressed, say so in one sentence in trading terms and name the closest
+supported setting. Never switch to the legacy `run_hunter` to work around a missing
+setting, and never build a long `exclude_strategy_ids` list as a substitute filter.
+
 Before solving, show the effective settings and mark which came from the user and
 which are software defaults. Read `period_audit` in the result.
 
