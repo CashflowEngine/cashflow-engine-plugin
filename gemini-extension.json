@@ -1,6 +1,6 @@
 {
   "name": "cashflow-engine",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Search a backtested options-strategy library, measure portfolios, run Monte Carlo and the Hunter. Analysis only: it cannot trade.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {
