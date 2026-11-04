@@ -137,7 +137,9 @@ to Shared Portfolios, where other members can view and copy it. Call it only whe
 user asks to share; save first with `save_portfolio`, show the title, description and
 sharer name before publishing, and note that re-sharing publishes a new version.
 `list_shared_portfolios` reads the page (backtest and out-of-sample figures, no
-ranking). `get_index_bars` returns historical SPX/VIX-family OHLC at 1m (one date),
+ranking). Delta strategies (short leg by delta, MEIC/METF, fixed 95% stop) are searchable with
+`source='engine_delta'`; pass `generation_id` back to pin a generation; no OptionsApp
+export. `get_index_bars` returns historical SPX/VIX-family OHLC at 1m (one date),
 5m (10 days) or daily (5 years) resolution, bar-open UTC; no individual stocks, never a
 forecast or a signal.
 

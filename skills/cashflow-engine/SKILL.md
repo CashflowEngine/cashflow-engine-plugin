@@ -201,6 +201,15 @@ Withdrawing a shared portfolio is a Workbench action; there is no tool for it.
 `list_shared_portfolios` reads the page. Its figures are backtest and out-of-sample
 tracker records, listed in no ranking.
 
+## Delta strategies
+
+`search_strategies`, `get_strategy` and `list_filter_options` accept
+`source='engine_delta'`: MEIC and METF strategies whose short leg is chosen by delta
+(`short_delta` 5 to 50, step 5) instead of by premium, with a fixed 95% stop. Premium,
+VIX, weekday and event filters do not apply. Each result names its data generation;
+pass `generation_id` back to read the same generation again. The OptionsApp export
+does not support delta strategies.
+
 ## Index data
 
 `get_index_bars` returns historical OHLC for SPX, VIX, VIX1D, VIX9D, VVIX, COR1M and
